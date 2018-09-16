@@ -8,3 +8,7 @@ release/releases/
 release/plugins/
 obj/
 bin/
+Makefile
+/qt-linux/*.h
+/qt-linux/*.cpp
+/qt-linux/*.o
