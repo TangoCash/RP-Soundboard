@@ -6,9 +6,9 @@ linux-g++-64:ARCHID = 64
 CONFIG(debug, release|debug):BUILDTYPE = "debug"
 CONFIG(release, release|debug):BUILDTYPE = "release"
 
-!exists($(TS3DIR)) {
-	error(evironment variable TS3DIR=\'$(TS3DIR)\' invalid or not set);
-}
+#!exists($(TS3DIR)) {
+#	error(evironment variable TS3DIR=\'$(TS3DIR)\' invalid or not set);
+#}
 
 version_script.target = ../src/version/version.h
 version_script.commands = "cd ../src/version && python version.py"
@@ -25,9 +25,14 @@ DEFINES += LINUX
 CONFIG(debug, release|debug):DEFINES += _DEBUG
 CONFIG(release, release|debug):DEFINES += NDEBUG
 
-INCLUDEPATH += ../include ../ffmpeg/linux/lib_lin_x$${ARCHID}/include
+INCLUDEPATH += ../include
 
-LIBS += -L$(TS3DIR) -L../ffmpeg/linux/lib_lin_x$${ARCHID}
+PKGCONFIG += Qt5Core
+PKGCONFIG += Qt5Network
+PKGCONFIG += Qt5Widgets
+PKGCONFIG += Qt5Gui
+
+#LIBS += -L$(TS3DIR)
 
 LIBS += -lavcodec \
     -lavformat \
@@ -36,7 +41,8 @@ LIBS += -lavcodec \
 
 QMAKE_CXXFLAGS += -Wno-unused-parameter
 
-QMAKE_POST_LINK += "cp $${DESTDIR}/lib$${TARGET}.so $(TS3DIR)/plugins"
+#QMAKE_POST_LINK += "cp $${DESTDIR}/lib$${TARGET}.so $(TS3DIR)/plugins"
+
 
 include(./ts3soundboard.pri)
 

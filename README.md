@@ -13,3 +13,14 @@ http://forum.teamspeak.com/threads/125318-RELEASE-RP-Soundboard
 - Crop sounds to play only your favorite portion of a sound
 - Adjust volume gain for each sound file
 - Set keyboard hotkeys for each of your buttons
+
+# Linux Build Hints:
+- sudo apt-get install qt5-qmake
+- sudo apt-get install qtbase5-dev
+
+- cd ~/RP-Soundboard/qt-linux
+- QT_SELECT=5 qmake ts3soundboard_linux.pro
+
+- make
+
+- bin/release_lin/librp_soundboard.so
