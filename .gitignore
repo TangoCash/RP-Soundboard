@@ -1,8 +1,3 @@
-vs2015/*.db
-vs2015/*.opendb
-vs2015/*.user
-vs2015/.vs/
-vs2015/GeneratedFiles/
 src/version/version.h
 release/releases/
 release/plugins/
@@ -12,3 +7,10 @@ Makefile
 /qt-linux/*.h
 /qt-linux/*.cpp
 /qt-linux/*.o
+build/
+build32/
+build64/
+
+# we don't commit pre-compiled linux libraries since it's way easier to compile
+# ffmpeg on linux compared to windows
+ffmpeg/lib_lin*/

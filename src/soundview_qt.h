@@ -10,7 +10,8 @@
 #ifndef rpsbsrc__soundview_qt_H__
 #define rpsbsrc__soundview_qt_H__
 
-#include <QtWidgets/QWidget>
+#include <QWidget>
+#include <QPainterPath>
 #include <memory>
 
 #include "SoundInfo.h"
