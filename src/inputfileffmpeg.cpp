@@ -416,7 +416,7 @@ int InputFileFFmpeg::readSamples(SampleProducer *sampleBuffer)
 
 	if(properFrames == 0)
 	{
-		if(m_codecCtx->codec->capabilities & CODEC_CAP_DELAY && m_convertedSamples < m_decodedSamplesTargetSR)
+		if(m_codecCtx->codec->capabilities & AV_CODEC_CAP_DELAY && m_convertedSamples < m_decodedSamplesTargetSR)
 		{
 			// Some codecs will cause frames to be buffered up in the decoding process. If the CODEC_CAP_DELAY flag
 			// is set, there can be buffered up frames that need to be flushed, so we'll do that

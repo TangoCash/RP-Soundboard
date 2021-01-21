@@ -24,7 +24,6 @@ HEADERS += ../src/ExpandableSection.h \
     ../src/SoundInfo.h \
     ../src/ts3log.h \
     ../src/version/version.h \
-    ../vs2015/resource.h \
     ../src/about_qt.h \
     ../src/samples.h \
     ../src/soundsettings_qt.h \
